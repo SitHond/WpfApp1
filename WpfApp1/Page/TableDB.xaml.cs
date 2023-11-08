@@ -44,13 +44,13 @@ namespace WpfApp1.Page
 
             using (var context = new MalContext())
             {
-                bool itemInBuket = context.Bukets.Any(item => item.Bulet_Name == prod.Prod_Name);
+                bool itemInBuket = context.Bukets.Any(item => item.Bulet_Name == prod.Name);
                 if (!itemInBuket)
                 {
                     Buket buket = new Buket
                     {
-                        Bulet_Name = prod.Prod_Name,
-                        Bulet_Image = prod.Prod_Image,
+                        Bulet_Name = prod.Name,
+                        Bulet_Image = prod.Image,
                     };
                     context.Bukets.Add(buket);
                     context.SaveChanges();

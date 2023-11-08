@@ -8,24 +8,18 @@
         Title="ButonWindow" Height="450" Width="800">
     <Grid>
         <ListView x:Name="listView" Margin="0,0,140,0">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn>
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="ID"/>
-                                    <TextBlock Text="{Binding Bulet_Id}"/>
-                                    <TextBlock Text="Name"/>
-                                    <TextBlock Text="{Binding Bulet_Name}"/>
-                                    <TextBlock Text="Image"/>
-                                    <Image Width="100" Height="100" Source="{Binding Bulet_Image}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="ID"/>
+                        <TextBlock Text="{Binding Bulet_Id}"/>
+                        <TextBlock Text="Name"/>
+                        <TextBlock Text="{Binding Bulet_Name}"/>
+                        <TextBlock Text="Image"/>
+                        <Image Width="100" Height="100" Source="{Binding Bulet_Image}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Window>
