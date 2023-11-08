@@ -1,0 +1,38 @@
+﻿<Page x:Class="WpfApp1.Page.TableDB"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.Page"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TableDB">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="listView" VirtualizingPanel.ScrollUnit="Pixel">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="ID"/>
+                        <TextBlock Text="{Binding Prod_Id}"/>
+                        <TextBlock Text="Name"/>
+                        <TextBlock Text="{Binding Prod_Name}"/>
+                        <TextBlock Text="Description"/>
+                        <TextBlock Text="{Binding Prod_Description}"/>
+                        <TextBlock Text="Image"/>
+                        <Image Width="100" Height="100" Source="{Binding Prod_Image}"/>
+                        <Button Content="В карзину" Click=" Button_Click_Buket" Tag="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Column="1">
+            <Button Content="Корзина" Click="Open_Buket"  />
+            <Button Content="Админ" x:Name="Admin_mod" />
+        </StackPanel>
+    </Grid>
+</Page>
